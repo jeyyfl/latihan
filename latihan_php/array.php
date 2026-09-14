@@ -99,7 +99,7 @@
 $keranjang = [
     ["buah" => "Apel", "harga" => 10000, "qty" => 3],
     ["buah" => "Pisang", "harga" => 5000, "qty" => 10],
-    ["buah" => "Mangga", "harga" => 15000, "qty" => 2]
+    ["buah" => "Mangga", "harga" => 15000, "qty" => 2], 
 ];
 
 foreach ($keranjang as $item) {
