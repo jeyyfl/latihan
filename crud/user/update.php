@@ -14,3 +14,4 @@ if ($koneksi->query($query)) {
 } else {
     echo "Data Gagal Diupate!";
 }
+ 

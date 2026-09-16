@@ -2,7 +2,7 @@
 
 //include koneksi database
 include('../koneksi/database.php');
-
+ 
 //get data dari form
 $nama   = $_POST['nama'];
 $alamat = $_POST['alamat'];

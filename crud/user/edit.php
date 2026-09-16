@@ -29,7 +29,7 @@ $row = mysqli_fetch_array($result);
                 <div class="card">
                     <div class="card-header">
                         EDIT SISWA
-                    </div>
+                     </div>
                     <div class="card-body">
                         <form action="update.php" method="POST">
 

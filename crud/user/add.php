@@ -3,7 +3,7 @@
   <?php include_once('layout/header.php'); ?>
 
   <body>
-
+ 
     <div class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col-md-8 offset-md-2">

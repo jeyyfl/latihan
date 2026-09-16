@@ -13,7 +13,7 @@
             DATA SISWA
           </div>
           <div class="card-body">
-
+ 
             <!-- === MULAI KODE ALERT === -->
             <?php
             if (isset($_GET['pesan'])) {

@@ -1,7 +1,7 @@
 <?php
 
 include('../koneksi/database.php');
-
+ 
 $id = $_GET['id'];
 
 $query = "DELETE FROM user WHERE id = '$id'";
