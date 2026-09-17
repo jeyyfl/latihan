@@ -5,19 +5,25 @@
 
 <body>
 
-<?php
-session_start();
-if (!isset($_SESSION['login'])) {
+  <?php
+  session_start();
+  if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit;
-}
-?> 
+  }
+  ?>
 
-  <nav class="navbar bg-body-tertiary">
+
+  
+  <nav class="navbar bg-body-tertiary shadow-sm">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">Latihan Crud</span>
+      <a href="logout.php" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin keluar dari aplikasi?');">Logout</a>
     </div>
   </nav>
+
+  
+  
 
   <div class="container" style="margin-top: 80px">
     <div class="row">
@@ -28,7 +34,7 @@ if (!isset($_SESSION['login'])) {
           </div>
           <div class="card-body">
 
-     
+
             <?php
             if (isset($_GET['pesan'])) {
               if ($_GET['pesan'] == "tambah") {
@@ -55,7 +61,7 @@ if (!isset($_SESSION['login'])) {
               }
             }
             ?>
-            
+
 
             <a href="add.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>
             <table class="table table-bordered" id="myTable">
