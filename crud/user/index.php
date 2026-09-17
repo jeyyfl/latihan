@@ -5,6 +5,20 @@
 
 <body>
 
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+    exit;
+}
+?> 
+
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">Latihan Crud</span>
+    </div>
+  </nav>
+
   <div class="container" style="margin-top: 80px">
     <div class="row">
       <div class="col-md-12">
@@ -13,8 +27,8 @@
             DATA SISWA
           </div>
           <div class="card-body">
- 
-            <!-- === MULAI KODE ALERT === -->
+
+     
             <?php
             if (isset($_GET['pesan'])) {
               if ($_GET['pesan'] == "tambah") {
@@ -41,7 +55,7 @@
               }
             }
             ?>
-            <!-- === AKHIR KODE ALERT === -->
+            
 
             <a href="add.php" class="btn btn-md btn-success" style="margin-bottom: 10px">TAMBAH DATA</a>
             <table class="table table-bordered" id="myTable">
