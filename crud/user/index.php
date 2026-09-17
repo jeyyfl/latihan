@@ -3,18 +3,16 @@
 
 <?php include_once('layout/header.php'); ?>
 
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+  header("Location: login.php");
+  exit;
+}
+?>
+
 <body>
 
-  <?php
-  session_start();
-  if (!isset($_SESSION['login'])) {
-    header("Location: login.php");
-    exit;
-  }
-  ?>
-
-
-  
   <nav class="navbar bg-body-tertiary shadow-sm">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">Latihan Crud</span>
@@ -22,8 +20,8 @@
     </div>
   </nav>
 
-  
-  
+
+
 
   <div class="container" style="margin-top: 80px">
     <div class="row">
