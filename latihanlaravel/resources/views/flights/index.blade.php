@@ -1,22 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <!-- Pastikan Anda memuat CSS Bootstrap dan DataTables -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <title>Data Penerbangan</title>
-</head>
-<body>
+<!-- Memanggil file header dari folder layout -->
+@include('layout.header')
 
-  <nav class="navbar bg-body-tertiary shadow-sm mb-4">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">Latihan CRUD Laravel</span>
-      <!-- Fitur logout nanti kita buat terpisah -->
-      <a href="#" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin keluar dari aplikasi?');">Logout</a>
-    </div>
-  </nav>
+<div class="container" style="margin-top: 40px">
+  <div class="row">
+    <!-- ... sisa kode di bawahnya tetap sama persis seperti yang kamu tulis ... -->
 
-  <div class="container" style="margin-top: 80px">
+  <div class="container" style="margin-top: 40px">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
@@ -47,17 +36,15 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- Melakukan Looping data $flights dari Controller -->
+                <!-- Looping data penerbangan -->
                 @foreach ($flights as $index => $flight)
                   <tr>
                     <td>{{ $index + 1 }}</td>
                     <td>{{ $flight->flight_number }}</td>
                     <td>{{ $flight->destination }}</td>
                     <td class="text-center">
-                      <!-- Tombol Edit -->
                       <a href="/flights/{{ $flight->id }}/edit" class="btn btn-sm btn-primary">EDIT</a>
                       
-                      <!-- Tombol Hapus (Harus pakai Form di Laravel) -->
                       <form action="/flights/{{ $flight->id }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin ingin menghapus data ini?');">
                           @csrf
                           @method('DELETE')
@@ -74,14 +61,6 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-  
-  <script>
-    $(document).ready(function() {
-      $('#myTable').DataTable();
-    });
-  </script>
+@include('layout.script')
 </body>
 </html>
